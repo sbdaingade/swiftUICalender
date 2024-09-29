@@ -14,7 +14,7 @@ struct EventsCalendarView: View {
                 CalenderView(interval: DateInterval(start: .distantPast, end: .distantFuture))
             }
         }
-        .navigationTitle("Calendar view")
+        .navigationTitle("Calendar")
     }
 }
 
