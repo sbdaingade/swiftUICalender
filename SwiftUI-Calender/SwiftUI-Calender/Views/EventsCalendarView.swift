@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct EventsCalendarView: View {
+    @EnvironmentObject var eventStore: Events
     var body: some View {
         VStack {
             ScrollView {
-                CalenderView(interval: DateInterval(start: .distantPast, end: .distantFuture))
+                CalenderView(eventStore: eventStore, interval: DateInterval(start: .distantPast, end: .distantFuture))
             }
         }
         .navigationTitle("Calendar")
@@ -19,5 +20,5 @@ struct EventsCalendarView: View {
 }
 
 #Preview {
-    EventsCalendarView()
+    EventsCalendarView().environmentObject(Events(isPreview: true))
 }
