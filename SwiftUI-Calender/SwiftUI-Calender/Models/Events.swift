@@ -14,6 +14,13 @@ class Events: ObservableObject {
     
     init(isPreview: Bool = false) {
         self.isPreview = isPreview
+        if isPreview {
+            fetchData()
+        }
+    }
+    
+   private func fetchData() {
+        events = Event.sampleEvents
     }
     
 }

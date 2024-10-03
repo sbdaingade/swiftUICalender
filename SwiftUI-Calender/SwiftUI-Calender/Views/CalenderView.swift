@@ -51,14 +51,13 @@ struct CalenderView: UIViewRepresentable {
             
             if foundEvents.count > 1 {
                 return .image(UIImage(systemName: "doc.on.doc.fill"), color: .red, size: .large)
-                
             }
             
             let singleEvent = foundEvents.first!
             
             return .customView {
                 let icon = UILabel()
-                icon.text = "😎"
+                icon.text = singleEvent.icon
                 return icon
             }
             
